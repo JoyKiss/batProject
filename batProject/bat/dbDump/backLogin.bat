@@ -26,7 +26,7 @@ if "%path%"=="" set path = "E:"
 
 set h=%time:~0,2%
 set h=%h: =0%
-set bakFileNameTail=%date:~0,4%-%date:~5,2%-%date:~8,2%_%h%%time:~3,2%%time:~6,2%
+set bakFileNameTail=%date:~3,4%-%date:~8,2%-%date:~11,2%_%h%%time:~3,2%%time:~6,2%
 echo --------------开始备份%database% %ip%--------------
 mysqldump -u%user% -p%pwd% -h%ip% -P3306 %database% > %path%/%database%_%bakFileNameTail%.sql
 echo 备份%database%结束 备份文件:%database%_%bakFileNameTail%.sql
